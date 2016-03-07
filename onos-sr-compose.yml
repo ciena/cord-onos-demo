@@ -1,0 +1,13 @@
+onos:
+  image: onosproject/onos:1.4
+  container_name: onos
+  environment:
+    - "ONOS_APPS=drivers,openflow,segmentrouting"
+  labels:
+    - "lab.cord.component=Controller"
+  restart: always
+  ports:
+    - "8181:8181"
+    - "6653:6653"
+    - "8101:8101"
+    - "9876:9876"
