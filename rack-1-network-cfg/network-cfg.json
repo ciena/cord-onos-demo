@@ -1,0 +1,84 @@
+{
+    "ports" : {
+    "of:000000000000fab1/1" : {
+        "interfaces" : [
+        {
+            "ips" : [ "10.1.20.1/16" ],
+            "vlan" : "-1"
+        }
+        ]
+    },
+    "of:000000000000fab1/2" : {
+        "interfaces" : [
+        {
+            "ips" : [ "10.1.20.1/16" ],
+            "vlan" : "-1"
+        }
+        ]
+    },
+    "of:000000000000fab1/3" : {
+        "interfaces" : [
+        {
+            "ips" : [ "10.1.20.1/16" ],
+            "vlan" : "-1"
+        }
+        ]
+    },
+    "of:000000000000fab1/4" : {
+        "interfaces" : [
+        {
+            "ips" : [ "10.1.20.1/16" ],
+            "vlan" : "-1"
+        }
+        ]
+    }
+    },
+    "devices" : {
+        "of:000000000000fab1" : {
+            "segmentrouting" : {
+                "name" : "fabric-1",
+                "nodeSid" : 101,
+                "routerIp" : "10.1.20.1",
+                "routerMac" : "cc:37:ab:17:7b:c0",
+                "isEdgeRouter" : true,
+                "adjacencySids" : []
+            }
+        },
+        "of:000000000000fab2" : {
+            "segmentrouting" : {
+                "name" : "fabric-2",
+                "nodeSid" : 102,
+                "routerIp" : "10.1.20.2",
+                "routerMac" : "70:72:cf:f5:60:9e",
+                "isEdgeRouter" : true,
+                "adjacencySids" : []
+            }
+        }
+    },
+    "hosts" : {
+        "2c:60:0c:e3:c2:38/4093" : {
+            "basic": {
+                "ips": ["10.1.0.1"],
+                "location": "of:000000000000fab1/1"
+            }
+        },
+        "2c:60:0c:e3:c4:2d/4093" : {
+            "basic": {
+                "ips": ["10.1.0.2"],
+                "location": "of:000000000000fab1/2"
+            }
+        },
+        "2c:60:0c:cb:00:ef/4093" : {
+            "basic": {
+                "ips": ["10.1.0.3"],
+                "location": "of:000000000000fab1/3"
+            }
+        },
+        "2c:60:0c:cb:00:3b/4093" : {
+            "basic": {
+                "ips": ["10.1.0.4"],
+                "location": "of:000000000000fab1/4"
+            }
+        }
+    }
+}

@@ -1,0 +1,104 @@
+{
+    "ports" : {
+    "of:0000000000000021/1" : {
+        "interfaces" : [
+        {
+            "ips" : [ "10.2.20.1/16" ],
+            "vlan" : "-1"
+        }
+        ]
+    },
+    "of:0000000000000021/2" : {
+        "interfaces" : [
+        {
+            "ips" : [ "10.2.20.1/16" ],
+            "vlan" : "-1"
+        }
+        ]
+    },
+    "of:0000000000000022/3" : {
+        "interfaces" : [
+        {
+            "ips" : [ "10.2.20.2/16" ],
+            "vlan" : "-1"
+        }
+        ]
+    },
+    "of:0000000000000022/4" : {
+        "interfaces" : [
+        {
+            "ips" : [ "10.2.20.2/16" ],
+            "vlan" : "-1"
+        }
+        ]
+    }
+    },
+    "devices" : {
+        "of:0000000000000021" : {
+            "segmentrouting" : {
+                "name" : "leaf-1",
+                "nodeSid" : 101,
+                "routerIp" : "10.2.20.1",
+                "routerMac" : "cc:37:ab:7c:b9:d6",
+                "isEdgeRouter" : true,
+                "adjacencySids" : []
+            }
+        },
+        "of:0000000000000022" : {
+            "segmentrouting" : {
+                "name" : "leaf-2",
+                "nodeSid" : 102,
+                "routerIp" : "10.2.20.2",
+                "routerMac" : "cc:37:ab:7c:ba:da",
+                "isEdgeRouter" : true,
+                "adjacencySids" : []
+            }
+        },
+        "of:0000000000000011" : {
+            "segmentrouting" : {
+                "name" : "spine-1",
+                "nodeSid" : 103,
+                "routerIp" : "10.2.30.1",
+                "routerMac" : "cc:37:ab:7c:be:68",
+                "isEdgeRouter" : false,
+                "adjacencySids" : []
+            }
+        },
+        "of:0000000000000012" : {
+            "segmentrouting" : {
+                "name" : "spine-2",
+                "nodeSid" : 104,
+                "routerIp" : "10.2.30.2",
+                "routerMac" : "cc:37:ab:7c:bf:ee",
+                "isEdgeRouter" : false,
+                "adjacencySids" : []
+            }
+        }
+    },
+    "hosts" : {
+        "00:25:90:fa:5f:58/4093" : {
+            "basic": {
+                "ips": ["10.2.0.1"],
+                "location": "of:0000000000000021/1"
+            }
+        },
+        "00:25:90:fa:5f:78/4093" : {
+            "basic": {
+                "ips": ["10.2.0.2"],
+                "location": "of:0000000000000021/2"
+            }
+        },
+        "00:25:90:fa:5f:52/4093" : {
+            "basic": {
+                "ips": ["10.2.0.3"],
+                "location": "of:0000000000000022/3"
+            }
+        },
+        "00:25:90:fa:5f:4e/4093" : {
+            "basic": {
+                "ips": ["10.2.0.4"],
+                "location": "of:0000000000000022/4"
+            }
+        }
+    }
+}
