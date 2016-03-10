@@ -1,50 +1,65 @@
+// This is a commented JSON data file. The comments must stripped from the
+// file before passing it to a JSON parser. This can be done various way
+// including the JavaScript JSON.minify() function or a simple sed script
+// such as "catting" this file through sed -e '|s//.*$||g'.
+
+
+// This file represents the network configuration for the cord demo pod number
+// two (2).
 {
     "ports" : {
-    "of:000000000000fab1/1" : {
-        "interfaces" : [
-        {
-            "ips" : [ "10.1.20.1/16" ]
+        // Leaf-1/port-1 connected to cord-r1-s1/p6p1
+        "of:0000000000000021/1" : {
+            "interfaces" : [
+                {
+                    "ips" : [ "10.4.1.254/24" ]
+                }
+            ]
+        },
+    
+        // Leaf-1/port-2 connected to cord-r1-s2/eth2
+        "of:0000000000000021/2" : {
+            "interfaces" : [
+                {
+                    "ips" : [ "10.4.1.254/24" ]
+                }
+            ]
+        },
+    
+        // Leaf-1/port-3 connected to cord-r1-s3/eth2
+        "of:0000000000000021/3" : {
+            "interfaces" : [
+                {
+                    "ips" : [ "10.4.1.254/24" ]
+                }
+            ]
+        },
+    
+        // Leaf-1/port-4 connected to cord-r1-s4/eth2
+        "of:0000000000000021/4" : {
+            "interfaces" : [
+                {
+                    "ips" : [ "10.4.1.254/24" ]
+                }
+            ]
         }
-        ]
-    },
-    "of:000000000000fab1/2" : {
-        "interfaces" : [
-        {
-            "ips" : [ "10.1.20.1/16" ]
-        }
-        ]
-    },
-    "of:000000000000fab1/3" : {
-        "interfaces" : [
-        {
-            "ips" : [ "10.1.20.1/16" ]
-        }
-        ]
-    },
-    "of:000000000000fab1/4" : {
-        "interfaces" : [
-        {
-            "ips" : [ "10.1.20.1/16" ]
-        }
-        ]
-    }
     },
     "devices" : {
-        "of:000000000000fab1" : {
+        "of:0000000000000021" : {
             "segmentrouting" : {
                 "name" : "fabric-1",
                 "nodeSid" : 101,
-                "routerIp" : "10.1.20.1",
+                "routerIp" : "10.4.1.254",
                 "routerMac" : "cc:37:ab:17:7b:c0",
                 "isEdgeRouter" : true,
                 "adjacencySids" : []
             }
         },
-        "of:000000000000fab2" : {
+        "of:0000000000000022" : {
             "segmentrouting" : {
                 "name" : "fabric-2",
                 "nodeSid" : 102,
-                "routerIp" : "10.1.20.2",
+                "routerIp" : "10.4.2.254",
                 "routerMac" : "70:72:cf:f5:60:9e",
                 "isEdgeRouter" : true,
                 "adjacencySids" : []
@@ -52,28 +67,36 @@
         }
     },
     "hosts" : {
-        "2c:60:0c:e3:c2:38/4093" : {
+        
+        // cord-r1-s1 iface p6p1
+        "2c:60:0c:e3:c2:38/-1" : {
             "basic": {
-                "ips": ["10.1.0.1"],
-                "location": "of:000000000000fab1/1"
+                "ips": ["10.4.1.1"],
+                "location": "of:0000000000000021/1"
             }
         },
-        "2c:60:0c:e3:c4:2d/4093" : {
+
+        // cord-r1-s2 iface eth2
+        "2c:60:0c:e3:c4:2d/-1" : {
             "basic": {
-                "ips": ["10.1.0.2"],
-                "location": "of:000000000000fab1/2"
+                "ips": ["10.4.1.2"],
+                "location": "of:0000000000000021/2"
             }
         },
-        "2c:60:0c:cb:00:ef/4093" : {
+
+        // cord-r1-s3 iface eth2
+        "2c:60:0c:cb:00:ef/-1" : {
             "basic": {
-                "ips": ["10.1.0.3"],
-                "location": "of:000000000000fab1/3"
+                "ips": ["10.4.1.3"],
+                "location": "of:0000000000000021/3"
             }
         },
-        "2c:60:0c:cb:00:3b/4093" : {
+
+        // cord-r1-s4 iface eth2
+        "2c:60:0c:cb:00:3b/-1" : {
             "basic": {
-                "ips": ["10.1.0.4"],
-                "location": "of:000000000000fab1/4"
+                "ips": ["10.4.1.4"],
+                "location": "of:0000000000000021/4"
             }
         }
     }
