@@ -16,6 +16,13 @@
                     "ips" : [ "10.3.1.254/24" ] // Represents a fake gateway
                                                 // for this subnet. ONOS will
                                                 // ARP this and respond.
+                },
+                {
+                    "vlan" : "1000" // cross-connect s-tag 42 to Tibit OLT
+                },
+                // Need to specify the public IP for the vSG
+                {
+                    "ips" : [ "10.3.1.130/32" ] // vSG public IP address /32
                 }
             ]
         },
@@ -27,6 +34,18 @@
                     "ips" : [ "10.3.1.254/24" ] // Represents a fake gateway
                                                 // for this subnet. ONOS will
                                                 // ARP this and respond.
+                }
+            ]
+        },
+
+	// Leaf-1/port-129 connected to Tibit OLT
+        // The physical port is port 25, but we are using a break out cable and thus the switch
+        // create virtual ports
+        "of:0000000000000001/129" : {
+            "interfaces" : [
+                {
+                    "name" : "tibit-olt", // unused
+                    "vlan" : "1000" // cross-connect s-tag 42 to vSG
                 }
             ]
         },
@@ -53,6 +72,7 @@
             ]
         }
     },
+
     "devices" : {
         "of:0000000000000021" : {
             "segmentrouting" : {
@@ -153,6 +173,20 @@
             }
         },
 
+        "02:42:0a:03:01:82/-1" : { // vSG1
+            "basic": {
+                "ips": ["10.3.1.130"], // vSG1 public IP address
+                "location": "of:0000000000000001/5"
+            }
+        },
+
+        "02:42:0a:03:01:83/-1" : { // vSG1 VM
+            "basic" : {
+                "ips": ["10.3.1.131"],
+                "location": "of:0000000000000001/5"
+             }
+         },
+
         // cord-r2-s3 iface eth0
         "68:05:ca:30:00:38/-1" : {
             "basic": {
@@ -167,6 +201,13 @@
                 "ips": ["10.3.2.2"],                 // host IP on fabric
                 "location": "of:0000000000000022/4"  // link back to fabric leaf-2/port-4
             }
+        }
+    },
+    "apps" : {
+        "org.onosproject.core" : {
+            "core" : {
+                "linkDiscoveryMode" : "STRICT" // enable strict link validation
+            }    
         }
     }
 }
