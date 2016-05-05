@@ -34,7 +34,7 @@
             "segmentrouting" : {
                 "name" : "leaf-1",
                 "nodeSid" : 101,
-                "routerIp" : "10.6.0.7",
+                "routerIp" : "10.6.1.254",
                 "routerMac" : "cc:37:ab:7c:bd:e6",
                 "isEdgeRouter" : true,
                 "adjacencySids" : []
@@ -44,7 +44,7 @@
             "segmentrouting" : {
                 "name" : "leaf-2",
                 "nodeSid" : 102,
-                "routerIp" : "10.6.0.10",
+                "routerIp" : "10.6.2.254",
                 "routerMac" : "cc:37:ab:7c:ba:58",
                 "isEdgeRouter" : true,
                 "adjacencySids" : []
@@ -98,7 +98,7 @@
         }
     },
     "hosts" : {
-        " 3c:fd:fe:9e:94:30/-1" : {
+        "3c:fd:fe:9e:94:30/-1" : {
             "basic": {
                 "ips": ["10.6.1.1"],
                 "location": "of:0000000000000021/1"
