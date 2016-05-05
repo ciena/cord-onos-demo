@@ -1,0 +1,126 @@
+{
+    "ports" : {
+    "of:0000000000000021/1" : {
+        "interfaces" : [
+        {
+            "ips" : [ "10.4.1.254/24" ]
+        }
+        ]
+    },
+    "of:0000000000000021/2" : {
+        "interfaces" : [
+        {
+            "ips" : [ "10.4.1.254/24" ]
+        }
+        ]
+    },
+    "of:0000000000000021/3" : {
+        "interfaces" : [
+        {
+            "ips" : [ "10.4.1.254/24" ]
+        }
+        ]
+    },
+    "of:0000000000000021/4" : {
+        "interfaces" : [
+        {
+            "ips" : [ "10.4.1.254/24" ]
+        }
+        ]
+    }
+    },
+    "devices" : {
+        "of:0000000000000021" : {
+            "segmentrouting" : {
+                "name" : "leaf-1",
+                "nodeSid" : 101,
+                "routerIp" : "10.4.0.153",
+                "routerMac" : "cc:37:ab:7c:bd:e6",
+                "isEdgeRouter" : true,
+                "adjacencySids" : []
+            }
+        },
+        "of:0000000000000022" : {
+            "segmentrouting" : {
+                "name" : "leaf-2",
+                "nodeSid" : 102,
+                "routerIp" : "10.4.0.154",
+                "routerMac" : "cc:37:ab:7c:ba:58",
+                "isEdgeRouter" : true,
+                "adjacencySids" : []
+            }
+        },
+        "of:0000000000000011" : {
+            "segmentrouting" : {
+                "name" : "spine-1",
+                "nodeSid" : 103,
+                "routerIp" : "10.4.0.151",
+                "routerMac" : "cc:37:ab:7c:b7:4c",
+                "isEdgeRouter" : false,
+                "adjacencySids" : []
+            }
+        },
+        "of:0000000000000012" : {
+            "segmentrouting" : {
+                "name" : "spine-2",
+                "nodeSid" : 104,
+                "routerIp" : "10.5.0.152",
+                "routerMac" : "cc:37:ab:7c:bf:6c",
+                "isEdgeRouter" : false,
+                "adjacencySids" : []
+            }
+        }
+    },
+     "links": {
+        "of:0000000000000011/1-of:0000000000000021/31": {
+            "basic": {}
+        },
+        "of:0000000000000012/1-of:0000000000000021/32": {
+            "basic": {}
+        },
+        "of:0000000000000011/2-of:0000000000000022/31": {
+            "basic": {}
+        },
+        "of:0000000000000012/2-of:0000000000000022/32": {
+            "basic": {}
+        },
+        "of:0000000000000021/31-of:0000000000000011/1": {
+            "basic": {}
+        },
+        "of:0000000000000021/32-of:0000000000000012/1": {
+            "basic": {}
+        },
+        "of:0000000000000022/31-of:0000000000000011/2": {
+            "basic": {}
+        },
+        "of:0000000000000022/32-of:0000000000000012/2": {
+            "basic": {}
+        }
+    },
+    "hosts" : {
+        "3C:FD:FE:9E:94:30/-1" : {
+            "basic": {
+                "ips": ["10.4.1.1"],
+                "location": "of:0000000000000021/1"
+            }
+        },
+        "3C:FD:FE:9E:98:68/-1" : {
+            "basic": {
+                "ips": ["10.4.1.2"],
+                "location": "of:0000000000000021/3"
+            }
+        },
+        "3C:FD:FE:9E:95:98/-1" : {
+            "basic": {
+                "ips": ["10.4.1.3"],
+                "location": "of:0000000000000021/1"
+            }
+        },
+        "3C:FD:FE:9E:94:28/-1" : {
+            "basic": {
+                "ips": ["10.4.1.4"],
+                "location": "of:0000000000000022/4"
+            }
+        }
+    }
+}

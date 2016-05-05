@@ -1,0 +1,47 @@
+{
+  "ports": {
+    "of:0000000000000021/49": {
+      "interfaces": [
+        {
+          "ips": ["10.5.1.254/24"]
+        }
+      ]
+    },
+    "of:0000000000000021/50": {
+      "interfaces": [
+        {
+          "ips": ["10.5.1.254/24"]
+        }
+      ]
+    }
+  },
+  "devices": {
+    "of:0000000000000021": {
+      "segmentrouting": {
+        "name": "fabric-1",
+        "nodeSid": 101,
+        "routerIp": "10.5.0.151",
+        "routerMac": "cc:37:ab:7c:b2:f6",
+        "isEdgeRouter": true,
+        "adjacencySids": [
+          
+        ]
+      }
+    }
+  },
+
+  "hosts": {
+    "3C:FD:FE:9E:94:10/-1": {
+      "basic": {
+        "ips": ["10.5.1.1"],
+        "location": "of:0000000000000021/49"
+      }
+    },
+    "3C:FD:FE:9E:99:40/-1": {
+      "basic": {
+        "ips": ["10.5.1.2"],
+        "location": "of:0000000000000021/50"
+      }
+    }
+  }
+}
