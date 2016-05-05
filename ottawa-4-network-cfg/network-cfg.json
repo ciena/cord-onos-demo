@@ -3,28 +3,28 @@
     "of:0000000000000021/1" : {
         "interfaces" : [
         {
-            "ips" : [ "10.4.1.254/24" ]
+            "ips" : [ "10.6.1.254/24" ]
         }
         ]
     },
     "of:0000000000000021/2" : {
         "interfaces" : [
         {
-            "ips" : [ "10.4.1.254/24" ]
+            "ips" : [ "10.6.1.254/24" ]
         }
         ]
     },
-    "of:0000000000000021/3" : {
+    "of:0000000000000022/3" : {
         "interfaces" : [
         {
-            "ips" : [ "10.4.1.254/24" ]
+            "ips" : [ "10.6.2.254/24" ]
         }
         ]
     },
-    "of:0000000000000021/4" : {
+    "of:0000000000000022/4" : {
         "interfaces" : [
         {
-            "ips" : [ "10.4.1.254/24" ]
+            "ips" : [ "10.6.2.254/24" ]
         }
         ]
     }
@@ -34,7 +34,7 @@
             "segmentrouting" : {
                 "name" : "leaf-1",
                 "nodeSid" : 101,
-                "routerIp" : "10.4.0.153",
+                "routerIp" : "10.6.0.7",
                 "routerMac" : "cc:37:ab:7c:bd:e6",
                 "isEdgeRouter" : true,
                 "adjacencySids" : []
@@ -44,7 +44,7 @@
             "segmentrouting" : {
                 "name" : "leaf-2",
                 "nodeSid" : 102,
-                "routerIp" : "10.4.0.154",
+                "routerIp" : "10.6.0.10",
                 "routerMac" : "cc:37:ab:7c:ba:58",
                 "isEdgeRouter" : true,
                 "adjacencySids" : []
@@ -54,7 +54,7 @@
             "segmentrouting" : {
                 "name" : "spine-1",
                 "nodeSid" : 103,
-                "routerIp" : "10.4.0.151",
+                "routerIp" : "10.6.0.6",
                 "routerMac" : "cc:37:ab:7c:b7:4c",
                 "isEdgeRouter" : false,
                 "adjacencySids" : []
@@ -64,7 +64,7 @@
             "segmentrouting" : {
                 "name" : "spine-2",
                 "nodeSid" : 104,
-                "routerIp" : "10.5.0.152",
+                "routerIp" : "10.6.0.8",
                 "routerMac" : "cc:37:ab:7c:bf:6c",
                 "isEdgeRouter" : false,
                 "adjacencySids" : []
@@ -100,25 +100,25 @@
     "hosts" : {
         "3C:FD:FE:9E:94:30/-1" : {
             "basic": {
-                "ips": ["10.4.1.1"],
+                "ips": ["10.6.1.1"],
                 "location": "of:0000000000000021/1"
             }
         },
         "3C:FD:FE:9E:98:68/-1" : {
             "basic": {
-                "ips": ["10.4.1.2"],
+                "ips": ["10.6.1.2"],
                 "location": "of:0000000000000021/3"
             }
         },
         "3C:FD:FE:9E:95:98/-1" : {
             "basic": {
-                "ips": ["10.4.1.3"],
-                "location": "of:0000000000000021/1"
+                "ips": ["10.6.2.3"],
+                "location": "of:0000000000000022/3"
             }
         },
         "3C:FD:FE:9E:94:28/-1" : {
             "basic": {
-                "ips": ["10.4.1.4"],
+                "ips": ["10.6.2.4"],
                 "location": "of:0000000000000022/4"
             }
         }
